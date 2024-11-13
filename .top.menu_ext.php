@@ -398,6 +398,24 @@ if (Loader::includeModule("intranet") && CIntranetUtils::IsExternalMailAvailable
 	);
 }
 
+if (
+	Loader::includeModule('biconnector')
+	&& ToolsManager::getInstance()->checkAvailabilityByMenuId('crm_bi')
+	&& class_exists('\Bitrix\BIConnector\Access\AccessController')
+	&& \Bitrix\BIConnector\Access\AccessController::getCurrent()->check(\Bitrix\BIConnector\Access\ActionDictionary::ACTION_BIC_ACCESS)
+)
+{
+	$arMenuB24[] = [
+		GetMessage('TOP_MENU_BICONNECTOR_CONSTRUCTOR'),
+		'/bi/dashboard/',
+		[],
+		[
+			'menu_item_id' => 'menu_bi_constructor',
+		],
+		'',
+	];
+}
+
 if (Loader::includeModule("socialnetwork"))
 {
 	$canCreateGroup = \Bitrix\Socialnetwork\Helper\Workgroup::canCreate();
