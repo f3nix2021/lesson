@@ -7,7 +7,7 @@ if (isset($_REQUEST["backurl"]) && is_string($_REQUEST["backurl"]) && mb_strpos(
 {
 	LocalRedirect($_REQUEST["backurl"]);
 }
-//test my git
+//recommendation from phpstorm
 $APPLICATION->SetTitle(GetMessage("AUTH_TITLE"));
 ?>
 <p class="notetext"><font><?=GetMessage("AUTH_ACCESS")?></font></p>
