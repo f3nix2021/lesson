@@ -97,9 +97,7 @@ if(!empty($_POST['block'])) {
             echo "<td></td>"; // ЭП текстовый блок НЕТ
         echo "</tr>";
 
-       /* echo "<pre>";
-        print_r($arFields);
-        echo "</pre>";*/
+        pr($ob);
     }
     // Закрываем файл
     fclose($file);
