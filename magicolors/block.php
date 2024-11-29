@@ -97,7 +97,7 @@ if(!empty($_POST['block'])) {
             echo "<td></td>"; // ЭП текстовый блок НЕТ
         echo "</tr>";
 
-        pr($ob);
+        //pr($ob);
     }
     // Закрываем файл
     fclose($file);
