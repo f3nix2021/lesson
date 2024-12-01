@@ -1,9 +1,11 @@
 <?php
-/*define('DEBUG_FILE_NAME', $_SERVER["DOCUMENT_ROOT"] .'/logs/'.date("Y-m-d").'.log');
+define('DEBUG_FILE_NAME', $_SERVER["DOCUMENT_ROOT"] .'/logs/'.date("Y-m-d").'.log');
 
 if (file_exists(__DIR__ . '/classes/autoload.php')) {
     require_once __DIR__ . '/classes/autoload.php';
-}*/
+}
+
+\Bitrix\Main\EventManager::getInstance()->addEventHandler('', 'PantColorOnAdd', ['\Otus\Highload\Handler', 'onColorAdd']);
 
 // автолоадер проекта
 include_once __DIR__ . '/../app/autoload.php';
@@ -24,3 +26,5 @@ Loader::registerAutoLoadClasses(null, [
     'Models\Lists\CarsPropertyValuesTable' => '/local/app/Models/Lists/CarsPropertyValuesTable.php',
     'Models\AbstractIblockPropertyValuesTable' => '/local/app/Models/AbstractIblockPropertyValuesTable.php',
 ]);
+
+
