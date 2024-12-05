@@ -1,29 +1,18 @@
 <?php
-namespace App\Models;
+namespace Models;
 
-use Bitrix\Main\Localization\Loc;
-use Bitrix\Main\ORM\Data\DataManager;
-use Bitrix\Main\ORM\Fields\IntegerField;
-use Bitrix\Main\ORM\Fields\StringField;
-use Bitrix\Main\ORM\Fields\Validators\LengthValidator;
+use Bitrix\Main\Localization\Loc,
+    Bitrix\Main\ORM\Data\DataManager,
+    Bitrix\Main\ORM\Fields\IntegerField,
+    Bitrix\Main\ORM\Fields\StringField,
+    Bitrix\Main\ORM\Fields\Validators\LengthValidator,
+    Bitrix\Main\Entity\Query\Join;
 
 /**
- * Class ClientsTable
+ * Class HospitalClientsTable
  *
- * Fields:
- * <ul>
- * <li> id int mandatory
- * <li> first_name string(50) optional
- * <li> last_name string(50) optional
- * <li> age int optional
- * <li> doctor_id int optional
- * <li> procedure_id int optional
- * <li> contact_id int optional
- * </ul>
- *
- * @package Bitrix\Clients
- **/
-
+ * @package Models
+ */
 class HospitalClientsTable extends DataManager
 {
     /**
