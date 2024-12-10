@@ -8,7 +8,7 @@ $APPLICATION->SetTitle(GetMessage('SERVICES_TITLE'));
 
 $APPLICATION->IncludeComponent(
 	'bitrix:lists',
-	'.default',
+	'otus',
 	[
 		'IBLOCK_TYPE_ID' => 'lists',
 		'SEF_MODE' => 'Y',
