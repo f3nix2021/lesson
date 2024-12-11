@@ -2,7 +2,7 @@
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 	die();
 
-$APPLICATION->IncludeComponent("bitrix:lists.export.excel", ".default", array(
+$APPLICATION->IncludeComponent("otus:lists.export.excel", ".default", array(
 	"IBLOCK_TYPE_ID" => $arParams["IBLOCK_TYPE_ID"],
 	"IBLOCK_ID" => $arResult["VARIABLES"]["list_id"],
 	"SECTION_ID" => $arResult["VARIABLES"]["section_id"] ?? null,
