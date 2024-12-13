@@ -5,6 +5,10 @@ if (!Loader::includeModule('crm')) {
     return;
 }
 
+use Bitrix\Main\Localization\Loc;
+
+Loc::loadMessages(__FILE__);
+
 $by = "name";
 $order = "asc";
 
@@ -22,7 +26,7 @@ $arComponentParameters = array(
     "PARAMETERS" => array(
         "TEMPLATE_FOR_CURRENCY" => array(
             "PARENT" => "BASE",
-            "NAME" => "Выбрать валюту",
+            "NAME" => Loc::getMessage("NAME_CURRENCY"),
             "TYPE" => "LIST",
             "MULTIPLE" => "N",
             "VALUES" => $listCurrency,
