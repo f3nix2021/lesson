@@ -25,8 +25,8 @@ $APPLICATION->IncludeComponent(
 	'bitrix:main.ui.filter',
 	'',
 	[
-		'FILTER_ID' => 'report_list',
-		'GRID_ID' => 'MY_GRID_ID',
+		'FILTER_ID' => 'SEARCH_ROMEO',
+		'GRID_ID' => 'ROMEO',
 		'FILTER' => [
 			['id' => 'UF_NAME', 'name' => 'Имя', 'type' => 'string'],
 			['id' => 'UF_LASTNAME', 'name' => 'Фамилия', 'type' => 'string'],
@@ -38,6 +38,23 @@ $APPLICATION->IncludeComponent(
 	]
 );
 
+// Получаем данные для фильтрации.
+$filterOptions = new \Bitrix\Main\UI\Filter\Options("SEARCH_ROMEO");
+$filterFields = $filterOptions->getFilter([
+	['id' => 'UF_NAME', 'name' => 'Имя', 'type' => 'string'],
+	['id' => 'UF_LASTNAME', 'name' => 'Фамилия', 'type' => 'string'],
+	['id' => 'UF_PHONE', 'name' => 'Телефон', 'type' => 'string'],
+	['id' => 'UF_JOBPOSITION', 'name' => 'Должность', 'type' => 'string'],
+]);
+// Конвертируем то, что вернул фильтр в формат пригодный для выборки данных.
+// (формат зависит от того, как и с помощью чего планируется выбирать данные)
+$filter = [];
+foreach ($filterFields as $key => $value)
+{
+	$filter = $value;
+}
+
+
 ?>
 
 <?
@@ -46,7 +63,7 @@ $APPLICATION->includeComponent(
 	"bitrix:main.ui.grid",
 	"",
 	[
-		"GRID_ID" => "MY_GRID_ID",
+		"GRID_ID" => "ROMEO",
 		"COLUMNS" => $arResult['COLUMNS'],
 		"ROWS" => $arResult['LISTS'],
 		"NAV_OBJECT" => $nav,
